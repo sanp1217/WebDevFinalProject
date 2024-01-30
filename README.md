@@ -1,1 +1,2 @@
-Uses React.
+Uses React
+API: https://rawg.io/apidocs
