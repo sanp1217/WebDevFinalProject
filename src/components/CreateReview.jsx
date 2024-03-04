@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./componentStyles/CreateReview.css";
 
 export default function CreateReview() {
   //from the url that ReviewBtn sets, based on the game clicked
@@ -45,12 +46,11 @@ export default function CreateReview() {
   }
 
   return (
-    <div>
-      <h3>Create New Review For {formattedGameName}</h3>
+    <div className="reviewContainer">
+      <h1>Create New Review For {formattedGameName}</h1>
       <form onSubmit={onSubmit}>
         <div className="formDiv">
-          <label htmlFor="review">Review</label>
-          <input
+          <textarea
             type="text"
             className="formReview"
             value={form.review}

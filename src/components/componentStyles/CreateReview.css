@@ -1,0 +1,21 @@
+.reviewContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formReview{
+    width: 700px;
+    height: 300px;
+    background-color: grey;
+    border-color: black;
+}
+
