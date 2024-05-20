@@ -19,7 +19,7 @@ export default function Game({ data }) {
   return (
     <div className="gameDiv">
       <div className="imageDiv">
-        <img className="gameImg" src={image}></img>
+        <img className="gameImg" src={image} loading="lazy"></img>
       </div>
 
       <div className="gameDetailsDiv">
