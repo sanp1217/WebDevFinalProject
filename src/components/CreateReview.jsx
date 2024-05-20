@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import RatingNums from "./RatingNums";
 import "./componentStyles/CreateReview.css";
 
 export default function CreateReview() {
@@ -58,14 +59,8 @@ export default function CreateReview() {
           />
 
           <label htmlFor="rating">Rating</label>
-          <input
-            type="number"
-            min={1}
-            max={10}
-            className="formRating"
-            value={form.rating}
-            onChange={(e) => updateForm({ rating: e.target.value })}
-          />
+          <RatingNums updateForm={updateForm}/>
+         
 
           <input type="submit" value="Create review" />
         </div>
