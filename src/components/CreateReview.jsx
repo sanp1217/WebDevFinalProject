@@ -59,8 +59,9 @@ export default function CreateReview() {
           />
 
           <label htmlFor="rating">Rating</label>
-          <RatingNums updateForm={updateForm}/>
-         
+          <div className="ratingButtons">
+            <RatingNums updateForm={updateForm}/>
+          </div>
 
           <input type="submit" value="Create review" />
         </div>
