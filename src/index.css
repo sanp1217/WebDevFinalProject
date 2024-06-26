@@ -10,7 +10,8 @@ body{
     justify-content: space-evenly;
 }
 
-button, input{
+button, input, textarea{
     color: white;
     background-color: rgb(38, 38, 38);
+    border-color: black;
 }

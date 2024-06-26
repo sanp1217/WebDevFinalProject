@@ -6,8 +6,8 @@ export default function RatingNums({ updateForm }) {
   function handleRatingSelection(num, e) {
     //Make the button clicked grey to show which one is selected and reset the others
     const buttons = document.querySelectorAll('button');
-    buttons.forEach(btn => btn.style.backgroundColor = 'white');
-    e.target.style.backgroundColor = 'grey';
+    buttons.forEach(btn => btn.style.backgroundColor = 'rgb(38, 38, 38)');
+    e.target.style.backgroundColor = 'rgb(10, 10, 10)';
     updateForm({ rating: num });
   };
 
