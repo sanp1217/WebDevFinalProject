@@ -58,7 +58,7 @@ export default function CreateReview() {
             onChange={(e) => updateForm({ review: e.target.value })}
           />
 
-          <label htmlFor="rating">Rating</label>
+          <label htmlFor="rating"></label>
           <div className="ratingButtons">
             <RatingNums updateForm={updateForm}/>
           </div>

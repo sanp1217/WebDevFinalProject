@@ -9,3 +9,8 @@ body{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+button, input{
+    color: white;
+    background-color: rgb(38, 38, 38);
+}
