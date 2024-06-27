@@ -17,7 +17,7 @@ export default function ReviewList() {
     }
 
     getReviews();
-  }, [reviews.length]);
+  }, []);
 
   function reviewList() {
     return reviews.map((review, i) => {
