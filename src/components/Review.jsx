@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function Review(props) {
+export default function Review({ review, gameImage} ) {
   return (
     <div>
-      <p>{props.review.game}</p>
-      <p>{props.review.review}</p>
-      <p>{props.review.rating}</p>
+      <img src={gameImage} loading="lazy"></img>
+      <p>{review.game}</p>
+      <p>{review.review}</p>
+      <p>{review.rating}</p>
     </div>
   );
 }
