@@ -1,8 +1,8 @@
 import React from "react";
 import "./componentStyles/Game.css";
-import GameDescription from "./GameDescription";
 import AddToListBtn from "./AddToListBtn";
 import ReviewBtn from "./ReviewBtn";
+
 
 export default function Game({ data }) {
   if (!data) {
