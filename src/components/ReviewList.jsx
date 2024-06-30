@@ -12,7 +12,6 @@ export default function ReviewList() {
       `https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&search_exact=true`
     );
     const data = await response.json();
-    console.log(data.results[0].background_image);
     return data.results[0].background_image;
   }
 
