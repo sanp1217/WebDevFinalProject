@@ -1,20 +1,21 @@
-.reviewContainer{
-    display: flex;
-    flex-direction: column;
-    border-style: solid;
-    border-color: rgb(38, 38, 38);
-    height: 400px;
-    width: 900px;
-    margin-bottom: 15px;
-    align-items: center;
+.reviewContainer {
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	border-color: rgb(38, 38, 38);
+	height: 400px;
+	width: 900px;
+	margin-bottom: 15px;
+	align-items: center;
+	border-radius: 10px;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
+.container {
+	display: flex;
+	justify-content: center;
 }
 
-.reviewContainer img{
-    height: 200px;
-    width: 300px;
+.reviewContainer img {
+	height: 200px;
+	width: 300px;
 }

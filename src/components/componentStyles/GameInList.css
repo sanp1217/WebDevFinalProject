@@ -1,0 +1,27 @@
+.OutContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.gamesListContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 55px;
+	border-style: solid;
+	border-color: rgb(38, 38, 38);
+	border-radius: 10px;
+}
+
+.gameAndReleaseCon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 500px;
+}
+
+.gamesListContainer img {
+	width: 500px;
+	height: 300px;
+}
