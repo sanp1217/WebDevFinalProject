@@ -15,8 +15,8 @@ gamesListRoutes.route("/list/add").post(async function (req, response) {
 	let dbConnect = getDb();
 	let gameToAdd = {
 		name: req.body.name,
-		releaseDate: req.body.releaseDate,
-		image: req.body.image,
+		releaseDate: req.body.released,
+		image: req.body.background_image,
 	};
 	const res = await dbConnect.collection("gamesList").insertOne(gameToAdd);
 	response.json(res);
