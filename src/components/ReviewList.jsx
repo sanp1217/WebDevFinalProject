@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from "react";
 import Review from "./Review";
+import credentials from "../../credentials.dev.json";
 
 export default function ReviewList() {
+  const apiKey = credentials.rawg.apiKey;
   const [reviews, setReviews] = useState([]);
+  const [gameImages, setGameImages] = useState({});
 
-  //fetches reviews from DB
+  const fetchGamePicture = async (gameName) => {
+    const response = await fetch(
+      `https://api.rawg.io/api/games?key=${apiKey}&search=${gameName}&search_exact=true`
+    );
+    const data = await response.json();
+    return data.results[0].background_image;
+  }
+
+  //fetches reviews from DB and game images
   useEffect(() => {
-    async function getReviews() {
+    async function getReviewsAndImages() {
       try {
         const response = await fetch("http://localhost:5000/review");
         const reviews = await response.json();
         setReviews(reviews);
+
+        const images = {};
+        for(const review of reviews){
+          const gameImage = await fetchGamePicture(review.game);
+          images[review.game] = gameImage;
+        }
+        setGameImages(images);
       } catch (error) {
         console.error(error);
       }
     }
 
-    getReviews();
-  }, [reviews.length]);
+    getReviewsAndImages();
+  }, []);
 
   function reviewList() {
     return reviews.map((review, i) => {
-      return <Review key={i} review={review} />;
+      const gameImage = gameImages[review.game];
+      return <Review key={i} review={review} gameImage={gameImage} />;
     });
   }
 

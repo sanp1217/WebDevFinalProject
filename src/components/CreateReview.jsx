@@ -47,7 +47,7 @@ export default function CreateReview() {
   }
 
   return (
-    <div className="reviewContainer">
+    <div className="createReviewContainer">
       <h1>Create New Review For {formattedGameName}</h1>
       <form onSubmit={onSubmit}>
         <div className="formDiv">
@@ -58,7 +58,7 @@ export default function CreateReview() {
             onChange={(e) => updateForm({ review: e.target.value })}
           />
 
-          <label htmlFor="rating">Rating</label>
+          <label htmlFor="rating"></label>
           <div className="ratingButtons">
             <RatingNums updateForm={updateForm}/>
           </div>

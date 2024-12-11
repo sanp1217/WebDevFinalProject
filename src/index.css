@@ -13,3 +13,9 @@ body{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+button, input, textarea{
+    color: white;
+    background-color: rgb(38, 38, 38);
+    border-color: black;
+}
