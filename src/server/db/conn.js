@@ -1,5 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-import credentials from "../../../credentials.dev.json" assert {type: "json"};
+import credentials from "../../../credentials.dev.json" with { type: "json"};
 
 const uri = credentials.mongodb.uri;
 
