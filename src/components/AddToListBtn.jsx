@@ -18,5 +18,5 @@ export default function AddToListBtn({ game }) {
 		navigate("/gamesList");
 	}
 
-	return <button onClick={handleClick}>Add To List</button>;
+	return <button onClick={handleClick}>Add</button>;
 }
