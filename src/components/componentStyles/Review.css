@@ -4,10 +4,19 @@
 	border-style: solid;
 	border-color: rgb(38, 38, 38);
 	height: 400px;
-	width: 900px;
+	width: 100%;
 	margin-bottom: 15px;
 	align-items: center;
 	border-radius: 10px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	justify-content: flex-start;
+	white-space: initial;
+	flex-shrink: 1;
+}
+
+.reviewContainer p {
+	word-break: break-all;
 }
 
 .container {
