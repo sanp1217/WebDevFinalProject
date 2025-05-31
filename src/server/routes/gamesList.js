@@ -1,5 +1,6 @@
 import express from "express";
 import { getDb } from "../db/conn.js";
+import { ObjectId } from "mongodb";
 
 const gamesListRoutes = express.Router();
 
@@ -17,9 +18,22 @@ gamesListRoutes.route("/list/add").post(async function (req, response) {
 		name: req.body.name,
 		releaseDate: req.body.released,
 		image: req.body.background_image,
+		status: "Playing",
 	};
 	const res = await dbConnect.collection("gamesList").insertOne(gameToAdd);
 	response.json(res);
+});
+
+gamesListRoutes.route("/list/changeStatus").patch(async function (req, res) {
+	console.log("it was sent with " + req.body.id + " and " + req.body.status);
+	let dbConnect = getDb();
+	const result = await dbConnect
+		.collection("gamesList")
+		.updateOne(
+			{ _id: new ObjectId(req.body.id) },
+			{ $set: { status: req.body.status } }
+		);
+	res.json(result);
 });
 
 export { gamesListRoutes };

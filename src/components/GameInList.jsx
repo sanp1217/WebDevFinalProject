@@ -1,13 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./componentStyles/GameInList.css";
 
 export default function GameInList({ game }) {
+	const [status, setStatus] = useState(game.status);
+	async function changeGameStatus(status, gameDBId) {
+		setStatus(status);
+		console.log(game.status);
+		let gameToChange = {
+			status: status,
+			id: gameDBId,
+		};
+		await fetch("http://localhost:5000/list/changeStatus", {
+			method: "PATCH",
+			headers: {
+				"Content-type": "application/json",
+			},
+			body: JSON.stringify(gameToChange),
+		}).catch((error) => {
+			console.error(error);
+		});
+	}
+
 	return (
 		<div className="OutContainer">
 			<div className="gamesListContainer">
 				<div className="gameAndReleaseCon">
 					<h1>{game.name}</h1>
 					<p>Released {game.releaseDate}</p>
+					<div className="statusDropdown">
+						<label htmlFor="gameStatus">Status: </label>
+						<select
+							onChange={(e) =>
+								changeGameStatus(e.target.value, game._id)
+							}
+							name="status"
+							id="status"
+							value={status}
+						>
+							<option value="playing">Playing</option>
+							<option value="finished">Finished</option>
+							<option value="dropped">Dropped</option>
+						</select>
+					</div>
 				</div>
 				<img src={game.image}></img>
 			</div>
