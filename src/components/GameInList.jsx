@@ -5,11 +5,12 @@ export default function GameInList({ game }) {
 	const [status, setStatus] = useState(game.status);
 	async function changeGameStatus(status, gameDBId) {
 		setStatus(status);
-		console.log(game.status);
+
 		let gameToChange = {
 			status: status,
 			id: gameDBId,
 		};
+
 		await fetch("http://localhost:5000/list/changeStatus", {
 			method: "PATCH",
 			headers: {
@@ -21,9 +22,7 @@ export default function GameInList({ game }) {
 		});
 	}
 
-	function deleteGameFromList(game) {
-		console.log(game._id);
-	}
+	async function deleteGameFromList(game) {}
 
 	return (
 		<div className="OutContainer">
