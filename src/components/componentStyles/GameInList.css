@@ -25,3 +25,16 @@
 	width: 500px;
 	height: 300px;
 }
+
+.deleteBtn {
+	color: white;
+	border: none;
+	width: 30px;
+	height: 30px;
+	font-weight: bold;
+}
+
+.deleteBtnCont {
+	display: flex;
+	justify-content: flex-end;
+}

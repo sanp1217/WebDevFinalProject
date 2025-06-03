@@ -21,9 +21,21 @@ export default function GameInList({ game }) {
 		});
 	}
 
+	function deleteGameFromList(game) {
+		console.log(game._id);
+	}
+
 	return (
 		<div className="OutContainer">
 			<div className="gamesListContainer">
+				<div className="deleteBtnCont">
+					<button
+						className="deleteBtn"
+						onClick={() => deleteGameFromList(game)}
+					>
+						X
+					</button>
+				</div>
 				<div className="gameAndReleaseCon">
 					<h1>{game.name}</h1>
 					<p>Released {game.releaseDate}</p>
