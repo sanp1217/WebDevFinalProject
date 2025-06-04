@@ -22,7 +22,17 @@ export default function GameInList({ game }) {
 		});
 	}
 
-	async function deleteGameFromList(game) {}
+	async function deleteGameFromList(game) {
+		await fetch("http://localhost:5000/list/deleteGameFromList", {
+			method: "DELETE",
+			headers: {
+				"Content-type": "application/json",
+			},
+			body: JSON.stringify({ gameId: game._id }),
+		}).catch((error) => {
+			console.error(error);
+		});
+	}
 
 	return (
 		<div className="OutContainer">

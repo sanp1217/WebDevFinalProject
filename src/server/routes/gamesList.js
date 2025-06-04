@@ -25,7 +25,6 @@ gamesListRoutes.route("/list/add").post(async function (req, response) {
 });
 
 gamesListRoutes.route("/list/changeStatus").patch(async function (req, res) {
-	console.log("it was sent with " + req.body.id + " and " + req.body.status);
 	let dbConnect = getDb();
 	const result = await dbConnect
 		.collection("gamesList")
@@ -35,5 +34,15 @@ gamesListRoutes.route("/list/changeStatus").patch(async function (req, res) {
 		);
 	res.json(result);
 });
+
+gamesListRoutes
+	.route("/list/deleteGameFromList")
+	.delete(async function (req, res) {
+		let dbConnect = getDb();
+		const result = await dbConnect
+			.collection("gamesList")
+			.deleteOne({ _id: new ObjectId(req.body.gameId) });
+		res.json(result);
+	});
 
 export { gamesListRoutes };
