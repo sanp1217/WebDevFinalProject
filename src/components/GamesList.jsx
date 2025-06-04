@@ -6,6 +6,12 @@ import GameInList from "./GameInList";
 export default function GamesList() {
 	const [gamesInList, setGamesInList] = useState([]);
 
+	function removeGame(idToDelete) {
+		setGamesInList((prevGames) =>
+			prevGames.filter((game) => game._id !== idToDelete)
+		);
+	}
+
 	useEffect(() => {
 		async function getGamesInList() {
 			try {
@@ -22,7 +28,7 @@ export default function GamesList() {
 
 	function gamesList() {
 		return gamesInList.map((game, i) => {
-			return <GameInList key={i} game={game} />;
+			return <GameInList key={i} game={game} removeGame={removeGame} />;
 		});
 	}
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./componentStyles/GameInList.css";
 
-export default function GameInList({ game }) {
+export default function GameInList({ game, removeGame }) {
 	const [status, setStatus] = useState(game.status);
 	async function changeGameStatus(status, gameDBId) {
 		setStatus(status);
@@ -32,6 +32,8 @@ export default function GameInList({ game }) {
 		}).catch((error) => {
 			console.error(error);
 		});
+
+		removeGame(game._id);
 	}
 
 	return (
